@@ -3,12 +3,11 @@ import React from 'react';
 const TodoItem = () => {
     return (
         <div>
-            <h3>TodoItem</h3>
-            <div className="row">
+            <div className="row mx-2 align-items-center">
                 <div>#1</div>
-                <div>Title</div>
-                <button>Edit</button>
-                <button>Delete</button>
+                <div className="col" >Todo Title</div>
+                <button className="btn btn-primary mx-2" >Edit</button>
+                <button className="btn btn-danger mx-2" >Delete</button>
             </div>
         </div>
     );

@@ -3,8 +3,10 @@ import TodoItem from './TodoItem'
 
 const todoList = () => {
     return (
-        <div>
-            <h3>TodoList</h3>
+        <div className="my-4">
+            
+            <TodoItem />
+            <TodoItem />
             <TodoItem />
         </div>
     );
