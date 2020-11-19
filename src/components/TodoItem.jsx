@@ -1,13 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-const TodoItem = () => {
+const TodoItem = ( {todo} ) => {
+    let dispatch = useDispatch()
     return (
         <div>
             <div className="row mx-2 align-items-center">
-                <div>#1</div>
-                <div className="col" >Todo Title</div>
+                <div>#{todo.id}</div>
+                <div className="col" >{todo.name}</div>
                 <button className="btn btn-primary mx-2" >Edit</button>
-                <button className="btn btn-danger mx-2" >Delete</button>
+                <button className="btn btn-danger mx-2" onClick={() => dispatch(deleteTodo(todo.id))}> Delete</button>
             </div>
         </div>
     );
