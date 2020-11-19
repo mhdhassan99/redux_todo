@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { v1 as uuid } from 'uuid';
+import { useDispatch } from 'react-redux'
 import { addTodo } from '../redux/action'
 
+
 const TodoInput = () => {
+    let dispatch = useDispatch();
     let [name, setName] = useState();
     return (
         <div>
@@ -13,12 +16,13 @@ const TodoInput = () => {
                     type="text" className="col form-control"></input>
                 <button 
                     onClick={() => {
-                        addTodo (
+                        dispatch(
+                            addTodo (
                             {
                                 id: uuid(),
                                 name: name 
                             }
-                        )
+                        ))
                         setName('');
                     }}
                     className="btn btn-primary mx-2"> Add </button>
