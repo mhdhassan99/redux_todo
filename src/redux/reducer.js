@@ -16,7 +16,15 @@ export let reducer = (state = todos, action) => {
             return newTodos;
 
         case UPDATE_TODO:
-            break;
+            newTodos = [...state];
+            let index = newTodos.indexOf(action.payload);
+            if (index != -1) {
+                newTodos[index] = {
+                    ...newTodos[index],
+                    name: action.payload,
+                }
+                return newTodos
+            }
     }
     return state; 
 }

@@ -24,7 +24,17 @@ const TodoItem = ( {todo} ) => {
 
                 <button 
                     onClick={() => {
-                        setEditable(!editable);
+                        dispatch(updateTodo(
+                            {
+                                ...todo,
+                                name: name
+                            }
+                        ))
+
+                        if (editable) {
+                            setName(todo.name)
+                        }
+                        setEditable(!editable); 
                     }}
                     className="btn btn-primary mx-2" >
                 {editable ? "Update": "Edit"}</button>
