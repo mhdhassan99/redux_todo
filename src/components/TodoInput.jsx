@@ -14,6 +14,7 @@ const TodoInput = () => {
                     onChange={(e) => setName(e.target.value)}
                     value={name}
                     type="text" className="col form-control"></input>
+                    
                 <button 
                     onClick={() => {
                         dispatch(

@@ -17,13 +17,16 @@ export let reducer = (state = todos, action) => {
 
         case UPDATE_TODO:
             newTodos = [...state];
-            let index = newTodos.indexOf(action.payload);
-            if (index != -1) {
-                newTodos[index] = {
-                    ...newTodos[index],
-                    name: action.payload,
+            let index = -1;
+            for (let i = 0; i < newTodos.length; i++){
+                index++
+                if (newTodos[i.id] == action.payload.id){
+                    break;
                 }
-                return newTodos
+            }
+            if (index != -1){
+                newTodos[index] = action.payload;
+                return newTodos;
             }
     }
     return state; 

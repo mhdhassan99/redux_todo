@@ -1,11 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../redux/action'
+import { updateTodo } from '../redux/action'
 import { useState } from 'react'
+
 const TodoItem = ( {todo} ) => {
+    
     let dispatch = useDispatch()
     const [editable, setEditable] = useState(false);
     const [name, setName] = useState('');
+
     debugger
     return (
         <div>
